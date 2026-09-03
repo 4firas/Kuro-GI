@@ -192,7 +192,7 @@ function swrow(label, pill, why, key, on){
   return `<div class="krow tall" data-sw="${key}"><span class="ksw${on?" on":""}"><span class="tr"></span><span class="kb"></span></span><span class="klab">${label}${pill?`<br><span class="kpill ${pill[1]}">${pill[0]}</span>`:""}</span>${why?`<div class="knote" style="display:${on?"block":"none"}">${why}</div>`:""}<div style="clear:both"></div></div>`;
 }
 function slirow(label, key, lo, hi, val, fmt, step){
-  return `<div class="ksl" data-sl="${key}" data-lo="${lo}" data-hi="${hi}" data-fmt="${fmt}" data-step="${step||1}"><div class="top"><span>${label}</span><span class="val">${fmtval(val,fmt)}</span></div><div class="track"><div class="tbg"></div><div class="tfill"></div><div class="tknob"></div></div></div>`;
+  return `<div class="ksl" data-sl="${key}" data-lo="${lo}" data-hi="${hi}" data-fmt="${fmt}" data-step="${step||1}" data-v="${val}"><div class="top"><span>${label}</span><span class="val">${fmtval(val,fmt)}</span></div><div class="track"><div class="tbg"></div><div class="tfill"></div><div class="tknob"></div></div></div>`;
 }
 function fmtval(v, fmt){ return fmt.replace("%d", Math.round(v)).replace("%.0f", Math.round(v)).replace("%.2f", (+v).toFixed(2)).replace("%s", v); }
 function sec(t){ return `<div class="ksec">${t}</div>`; }
