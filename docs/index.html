@@ -8,7 +8,7 @@
 <style>
 .demowrap { display: flex; flex-direction: column; align-items: center; padding: 26px 0 10px; }
 /* menu window: 48% of display clamped, bg #141a18 @250, sand hairline, rounding .9f */
-.kumenu { position: relative; display: flex; width: min(max(48vw, 374px), 760px); height: min(82vh, 700px);
+.kumenu { position: relative; display: flex; width: min(max(48vw, 374px), 760px); height: min(82vh, 700px); margin: 26px auto 10px;
   background: rgba(20,26,24,.98); border: 1px solid rgba(219,197,153,.28); border-radius: 15px;
   overflow: hidden; opacity: 0; transform: translateY(20px); }
 .kumenu.open { animation: kuopen .26s cubic-bezier(.22,.9,.3,1) forwards; }
@@ -32,9 +32,9 @@
 .kumain { position: relative; flex: 1; display: flex; flex-direction: column; min-width: 0; }
 /* header: 3f tall. KURO 1.5f sand, version .78f sandDim, rule with diamonds, close circle, page title */
 .kuhead { height: 51px; flex: none; position: relative; }
-.kuhead .ktitle { position: absolute; left: 15px; top: 8px; font-size: 25px; font-weight: 800;
-  letter-spacing: .06em; color: #dbc599; line-height: 1; }
-.kuhead .kver { position: absolute; left: 15px; top: 34px; font-size: 13px; color: #96886c; line-height: 1; }
+.kuhead .kbrandline { position: absolute; left: 15px; top: 11px; display: flex; align-items: baseline; gap: 9px; }
+.kuhead .ktitle { font-size: 25px; font-weight: 800; letter-spacing: .06em; color: #dbc599; line-height: 1; }
+.kuhead .kver { font-size: 13px; color: #96886c; line-height: 1; }
 .kuhead .krule { position: absolute; left: 15px; right: 15px; bottom: 0; height: 1px;
   background: rgba(219,197,153,.3); }
 .kuhead .krule::before, .kuhead .krule::after { content: ""; position: absolute; top: -3px;
@@ -169,7 +169,7 @@
 <div class="kurail" id="kurail"><div class="kuhi" id="kuhi"></div></div>
 <div class="kumain">
 <div class="kuhead">
-<span class="ktitle">KURO</span><span class="kver">v2.0</span>
+<span class="kbrandline"><span class="ktitle">KURO</span><span class="kver">v2.0</span></span>
 <span class="kpage" id="kpagename">Auto</span>
 <button class="kuclose" id="kuclose" aria-label="close"></button>
 <div class="krule"></div>
