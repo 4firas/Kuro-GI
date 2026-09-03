@@ -104,3 +104,9 @@ p.sub { color: var(--sanddim); margin: 0 0 24px; }
 .split h3 { font-size: 1.3rem; margin: 0 0 8px; color: var(--sand); }
 .split p { color: var(--sanddim); margin: 0 0 10px; }
 @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+
+::-webkit-scrollbar { width: 10px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #33474f; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #557283; }
+* { scrollbar-width: thin; scrollbar-color: #33474f transparent; }
