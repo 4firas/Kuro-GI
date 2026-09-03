@@ -11,13 +11,43 @@
 <div class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="#141a18" stroke="#dbc599" stroke-width="2.5"/><circle cx="27" cy="27" r="18.5" fill="none" stroke="#557283" stroke-width="1"/><text x="27" y="28.5" text-anchor="middle" dominant-baseline="central" font-family="HYWenHei,'Hiragino Sans GB',sans-serif" font-size="24" font-weight="800" fill="#dbc599">K</text></svg>KURO</a>
 <nav class="navlinks"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="features.html">Features</a></nav>
-<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.0">Download</a></span>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.1">Download</a></span>
 </div></div>
 
 <div class="wrap narrow doc">
 
-<h2>v2.0, current</h2>
-<p class="dim">Android arm64, game 7.0.0. <code>828b0141…99bf1470</code></p>
+<h2>v2.1, current</h2>
+<p class="dim">Android arm64, game 7.0.0. <code>1726ff97…e15eb2dd</code></p>
+<div class="card">
+<p><b>Safety update.</b> Quieted two client-side telemetry reports the game was packaging into its security traffic — movement-speed and overlay-window. No new switches to flip; the client simply volunteers less now. (How stays private.)</p>
+<p><b>Safe-by-default profile.</b> Fresh installs boot into a locked Profile 1: dangerous server-visible features off, God Mode and No Fall Damage on, Auto Talk / Loot / Open / Waypoint on, ESP on (chests + all oculi, 500 m), stealth teleport defaults. Slots 2–3 are free; loading one is your risk to take.</p>
+<p><b>Teleport points for every region.</b> 21,645 measured points, nothing estimated. Chests, oculi, specialties, waypoints per region:</p>
+<table>
+<tr><th>Region</th><th>Chests</th><th>Oculi</th><th>Specialties</th><th>Points</th></tr>
+<tr><td>Mondstadt</td><td>657</td><td>82</td><td>1774</td><td>76</td></tr>
+<tr><td>Dragonspine</td><td>292</td><td>90</td><td>244</td><td>30</td></tr>
+<tr><td>Liyue</td><td>1474</td><td>151</td><td>3124</td><td>109</td></tr>
+<tr><td>The Chasm</td><td>101</td><td>—</td><td>240</td><td>13</td></tr>
+<tr><td>Chenyu Vale</td><td>160</td><td>51</td><td>7</td><td>77</td></tr>
+<tr><td>Inazuma</td><td>1064</td><td>183</td><td>1996</td><td>139</td></tr>
+<tr><td>Enkanomiya</td><td>329</td><td>59</td><td>639</td><td>16</td></tr>
+<tr><td>Sumeru</td><td>1624</td><td>271</td><td>3457</td><td>312</td></tr>
+<tr><td>Fontaine</td><td>237</td><td>221</td><td>406</td><td>228</td></tr>
+<tr><td>Natlan</td><td>307</td><td>288</td><td>350</td><td>235</td></tr>
+<tr><td>Nod-Krai</td><td>219</td><td>194</td><td>—</td><td>119</td></tr>
+</table>
+<p>Plus 956 transmit points (852 waypoints, 41 statues, 63 domains) from the game's own scene data. Locked waypoints get visited on purpose; unlocked ones ride the game's own transmit.</p>
+<p><b>Auto farm with delay slider.</b> Whole selections nearest first, 500 ms to 10 s wait per point, 5 s default, with a random human pause added every hop. Nudge and retry, skip and remember, forced switches restored after.</p>
+<p><b>141 pickable collectibles.</b> Every crop, ore, drop and oculus by name and picture. Picked ones marked and teleportable.</p>
+<p><b>Crash records.</b> Every death writes what, where, and the last minute of breadcrumbs. One button copies it to Downloads for support. No account data in it.</p>
+<p><b>Smoother flight, guarded landings.</b> NoClip writes at frame start with an on-screen stick; long jumps cruise high, descend near the target, and hold the landing while terrain streams in. No void drops, no bounce loops.</p>
+<p><b>ESP overhaul.</b> Ring with picture or glyph, plates, smoothing, fade, off-screen arrows, live counts. On from the first boot.</p>
+<p><b>Menu rework.</b> Teleport and World reorganized top-down, every section says what it is. Closed-menu quick buttons for quest, chest, waypoint, oculus.</p>
+</div>
+<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.1">GitHub releases</a>, not re-uploads. Older copies floating around (including the early 2.0) are outdated.</p>
+
+<h2>v2.0</h2>
+<p class="dim">Android arm64, game 7.0.0. <code>828b0141…99bf1470</code>. Superseded by v2.1.</p>
 <div class="card">
 <p><b>Teleport Points.</b> Waypoints and statues of every region in one list, exact positions from the game's own scene data. Locked ones get visited on purpose.</p>
 <p><b>Auto farm.</b> Whole selections nearest first, 500 ms to 5 s wait slider, nudge and retry, skip and remember, forced switches with restore.</p>
