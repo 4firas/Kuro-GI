@@ -67,6 +67,7 @@ code {
 .btn.primary { background: var(--sand); border-color: var(--sand); color: #141a18; }
 .btn.primary:hover { background: #fff; color: #141a18; }
 .btn.small { padding: 7px 18px; font-size: .88rem; }
+.btn.ghost { background: transparent; border-color: rgba(219,197,153,.35); }
 
 /* hero */
 .hero { text-align: center; padding: 72px 0 30px; }
@@ -96,6 +97,7 @@ p.sub { color: var(--sanddim); margin: 0 0 24px; }
   border-radius: 14px; padding: 16px 18px; }
 .feat h3 { margin: 0 0 4px; font-size: 1rem; color: var(--sand); font-weight: 700;
   display: flex; align-items: center; gap: 10px; }
+.feat h3::before { content: ""; width: 7px; height: 7px; border: 1px solid var(--sand); transform: rotate(45deg); flex: none; }
 .feat h3 svg { width: 22px; height: 22px; flex: none; }
 .feat p { margin: 0; color: var(--sanddim); font-size: .9rem; line-height: 1.6; }
 
