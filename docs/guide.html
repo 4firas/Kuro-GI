@@ -3,67 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuro — guide</title>
+<title>Kuro | guide</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
 
-<header class="top">
-<svg class="logo" viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#fff600" stroke-width="3"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/><path d="M27 2v8M27 44v8M2 27h8M44 27h8" stroke="#dfcfc2" stroke-width="2"/></svg>
-<h1 class="brand">KURO<small>COMPANION OVERLAY</small></h1>
-<span class="ver">v2.0</span>
-</header>
+<div class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#dbc599" stroke-width="4"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/></svg>KURO</a>
+<nav class="navlinks"><a href="index.html">Home</a><a class="here" href="guide.html">Guide</a><a href="features.html">Features</a></nav>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.0">Download</a></span>
+</div></div>
 
-<nav class="nav">
-<a href="index.html">Home</a><a href="features.html">Features</a><a class="here" href="guide.html">Guide</a><a href="safety.html">Safety</a><a href="help.html">Help</a><a href="changelog.html">Changelog</a>
-</nav>
+<div class="wrap narrow doc">
 
-<hr class="sketch">
-
-<h2>Install</h2>
+<h2 id="start">Install</h2>
 <ol>
-<li>Download <code>KURO-v2.0.apk</code> from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.0">Releases</a>. It is the full client for Android arm64, built for game version 7.0.0 — not a patch, not a plugin.</li>
-<li>Verify it before installing:
+<li>Download <code>KURO-v2.0.apk</code> from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.0">Releases</a>. Full client, Android arm64, game version 7.0.0. Not a patch, not a plugin.</li>
+<li>Check the hash before installing:
 <pre>sha256sum KURO-v2.0.apk
-# must start with 828b0141 and match the .sha256 file in the release</pre></li>
-<li>Install the APK (allow install from unknown sources when asked). Your account is untouched — it's the same login.</li>
-<li>Launch and wait for the world to load. The badge appears once everything is hooked — <strong>don't press anything before that</strong>; early presses misbehave because the hooks aren't in yet.</li>
-<li>Tap the badge to open the menu. Quick buttons beside it jump straight to things.</li>
+# starts with 828b0141, matches the .sha256 in the release</pre></li>
+<li>Install it (allow unknown sources when asked). Same login, account untouched.</li>
+<li>Launch and wait for the world to load. The badge shows up once the hooks are in. <b>Don't press anything before that.</b> Early presses land before the hooks do and misbehave.</li>
+<li>Tap the badge for the menu. The quick buttons beside it jump straight to things.</li>
 </ol>
-<div class="note">Updating: install the new APK over the old one. Your profiles and collected memory carry over.</div>
+<div class="note">Updating means installing the new APK over the old one. Profiles and collected memory carry over.</div>
 
 <h2>First run</h2>
-<ul class="tight">
-<li>Open <strong>Settings → Safety</strong> and read the three pills. Then read <a href="safety.html">Safety</a> once, fully.</li>
-<li>Turn on <strong>No Fall Damage</strong> before trying any <em>approximate</em> offline point.</li>
-<li>Try one <strong>Go to nearest → Chest</strong> before running a farm, so you know what a landing feels like.</li>
-<li>Open the in-game map once per region you care about. Kuro harvests the map's own flags (activated vs locked) while it's open, and everything — counts, farm order, transmit choices — gets smarter with it.</li>
-</ul>
+<p>Read <a href="safety.html">Safety</a> once, fully, before touching anything red. Then: No Fall Damage on before any approximate pin. One <i>Go to nearest chest</i> before any farm, so a landing feels familiar. Open the in-game map once per region you care about, since Kuro reads the map's own flags while it's open and everything gets smarter with it.</p>
 
-<h2>Teleporting, properly</h2>
-<h3>One hop</h3>
-<p>Teleport → Go → nearest chest / waypoint / statue. Short hops are instant. Long ones start with a loading screen (the game's own transmit) and finish on foot — that screen is the safe mile, not a bug. The status line at the top of the page always says what's happening: <em>transmitting…</em>, <em>X m to go</em>, <em>arrived</em>. If a hop ever stops short, read that line — it names the cause.</p>
-<h3>A locked waypoint</h3>
-<p>Offline points → region → <strong>Teleport Points</strong> → Go to nearest. Locked ones are visited too, on purpose: you land next to it and Auto Waypoint presses the prompt. If the game offers no prompt at all, the point is quest-sealed — no tool opens those; the farm skips them.</p>
-<h3>A full clear</h3>
-<p>Offline points → region → kind → <strong>Auto farm</strong>. Set the wait (longer = calmer), watch the top line count collected vs skipped, stop any time. The six switches the run depends on (Auto Waypoint, Auto Statue, reach, While airborne, Auto Loot, Auto Open) are forced on for the run and restored after — however it ends. Collected points are remembered, so tomorrow's run only visits what's left.</p>
-<div class="note">Approximate pins (newer regions) arrive high and drop. No Fall Damage on. Every time. No exceptions.</div>
+<h2>One hop</h2>
+<p>Teleport, Go, nearest chest, waypoint or statue. Short hops land instantly. Long ones open with a loading screen (the game's own transmit) and finish on foot. That screen is the safe mile, not a bug. The status line at the top of the page always says what state it's in. If a hop ever stops short, read that line, since it names the cause.</p>
 
-<h3>Items</h3>
-<p>World → Items → pick by name and picture → <em>Nearest picked item</em> to jump to it, <em>Unpick all</em> to clear. Combine with <em>Only picked items</em> to declutter the ESP.</p>
+<h2>A locked waypoint</h2>
+<p>Offline points, region, Teleport Points, Go to nearest. Locked ones get visited on purpose. You land next to it and Auto Waypoint presses the prompt. No prompt at all means quest-sealed, so finish the local quest first. Nothing opens those.</p>
 
-<h2>ESP</h2>
-<p>World → ESP. Ring with picture or symbol, name, distance. Start with names + distance on, arrows on, max distance ~200 m, and narrow by kind under What to mark. Done things stop being counted — if a kind shows zero, move on or Reset visited.</p>
+<h2>A full clear</h2>
+<p>Offline points, region, kind, Auto farm. Set the wait (longer is calmer) and watch the top line count collected against skipped. Stop any time. The six switches the run needs get forced on for it and restored after, however it ends. Collected points are remembered, so tomorrow's run only visits what's left.</p>
+<div class="note">Approximate pins arrive high and drop. No Fall Damage on. Every time.</div>
 
-<h2>Profiles &amp; harvest</h2>
-<p>Settings → Profiles saves the whole configuration; keep one for screenshots (hide damage numbers, ESP pretty) and one for farming. Settings → Harvest records what you walk past with a count and a JSON export.</p>
+<h2>Items and ESP</h2>
+<p>World, Items, pick by name and picture. <i>Nearest picked item</i> jumps to it, <i>Unpick all</i> clears. <i>Only picked items</i> declutters the rest. For ESP itself: names and distance on, arrows on, max distance around 200 m, then narrow by kind. A kind showing zero means move on.</p>
 
-<hr class="sketch">
-<footer>
-<p>Kuro is an unofficial fan project. Not affiliated with, endorsed by, or connected to HoYoverse or miHoYo.</p>
-</footer>
+<h2>Profiles and harvest</h2>
+<p>Profiles save the whole setup. Keep one for screenshots and one for farming. Harvest records what you walk past, with a count and a JSON export.</p>
 
 </div>
+
+<footer class="site"><div class="wrap narrow">
+<p>Kuro is an unofficial fan project. Not affiliated with HoYoverse or miHoYo.</p>
+</div></footer>
+
 </body>
 </html>

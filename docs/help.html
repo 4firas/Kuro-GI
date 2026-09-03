@@ -3,70 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuro — help</title>
+<title>Kuro | help</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
 
-<header class="top">
-<svg class="logo" viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#fff600" stroke-width="3"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/><path d="M27 2v8M27 44v8M2 27h8M44 27h8" stroke="#dfcfc2" stroke-width="2"/></svg>
-<h1 class="brand">KURO<small>COMPANION OVERLAY</small></h1>
-<span class="ver">v2.0</span>
-</header>
+<div class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#dbc599" stroke-width="4"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/></svg>KURO</a>
+<nav class="navlinks"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="features.html">Features</a></nav>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.0">Download</a></span>
+</div></div>
 
-<nav class="nav">
-<a href="index.html">Home</a><a href="features.html">Features</a><a href="guide.html">Guide</a><a href="safety.html">Safety</a><a class="here" href="help.html">Help</a><a href="changelog.html">Changelog</a>
-</nav>
-
-<hr class="sketch">
+<div class="wrap narrow doc">
 
 <h2>Help</h2>
 
 <h3>The game crashed</h3>
-<p>Next launch, open Settings → <strong>If something goes wrong</strong>. If the last session died, the record is there: what died, where, which switches were on, and the last minute of what Kuro was doing — as codes, no account data. <strong>Copy the record to Downloads</strong> and send the file. That record is usually the whole diagnosis.</p>
+<p>Next launch: Settings, If something goes wrong. If the last session died, the record sits there. What died, where, which switches were on, the last minute of what Kuro was doing, as codes, no account data. Copy the record to Downloads and send the file. That record is usually the whole diagnosis.</p>
 
-<h3>A teleport stopped short / took forever</h3>
-<p>Read the status line at the top of the Teleport page — it always says which state it's in:</p>
-<ul class="tight">
-<li><em>transmitting…</em> — the map-transmit leg, with its loading screen. Up to ~10 s on a slow load.</li>
-<li><em>X m to go, hop N</em> — paced mode crawling. Check your pace, or switch paced off.</li>
-<li><em>arrived / moved to …</em> — done; if you're not where you expected, say where you are vs where you aimed.</li>
-<li><em>gave up … short after N hops</em> — beyond the hop budget. Report it with from → to.</li>
-<li><em>cancelled</em> — something (you, or a new press) stopped it.</li>
-</ul>
+<h3>A teleport stopped short or took forever</h3>
+<p>Read the status line at the top of the Teleport page. It always says the state: <i>transmitting</i> with its loading screen (up to ~10 s on a slow load), <i>X m to go</i> while paced mode crawls (check your pace, or switch paced off), <i>arrived</i> or <i>moved to</i> when done, <i>gave up short after N hops</i> past the hop budget (report from and to), <i>cancelled</i> when you or a new press stopped it.</p>
 
 <h3>Landed under the map</h3>
-<p>Should be fixed in 2.0 (the landing is guarded while terrain streams). If it still happens: where from → where to, approximate or exact pin, and whether No Fall Damage was on.</p>
+<p>Fixed in 2.0 for the known paths: the landing is guarded while terrain streams. Still happens: report from and to, approximate or exact pin, No Fall Damage on or off.</p>
 
 <h3>A waypoint won't unlock</h3>
-<p>Go stand next to it through Teleport Points. If Auto Waypoint presses and it opens — working as designed. If no prompt appears at all, it's quest-sealed: finish the local quest first. No tool opens those.</p>
+<p>Stand next to it through Teleport Points. Auto Waypoint presses and it opens, working as designed. No prompt at all means quest-sealed, so finish the local quest first. Nothing opens those.</p>
 
-<h3>Nothing presses / no button at range</h3>
-<ul class="tight">
-<li>Is the matching Auto switch actually on? Nothing presses with its switch off — by design.</li>
-<li>Range extensions evaluate while you move. Walk toward the thing from 30+ m and watch where the prompt pops; standing still proves nothing.</li>
-<li>Wait for the badge after launch. Early presses land before the hooks do.</li>
-</ul>
+<h3>Nothing presses, no button at range</h3>
+<p>First check the matching Auto switch is actually on, since nothing presses with its switch off. Then remember range only gets evaluated while you move: walk in from 30 m out and watch where the prompt pops. Standing still proves nothing. And wait for the badge after launch, since early presses land before the hooks.</p>
 
-<h3>Menu / overlay issues</h3>
-<p>Badge missing after load → relaunch once; still missing → send a crash record (there may be a silent death behind it). Sliders jumping → drag, don't tap. Menu open but frozen → close it, wait two seconds, reopen.</p>
+<h3>Menu and overlay</h3>
+<p>Badge missing after load means relaunch once. Still missing means send a crash record, since something may have died quietly behind it. Drag sliders instead of tapping them. Menu frozen means close it, wait two seconds, reopen.</p>
 
 <h3>FAQ</h3>
-<ul class="tight">
-<li><strong>Ban?</strong> — see <a href="safety.html">Safety</a>. Short version: possible, behave accordingly, alt first.</li>
-<li><strong>New game version out, Kuro broken?</strong> — expected. Wait for the release that names your version; don't force old builds.</li>
-<li><strong>iOS / PC / emulator?</strong> — Android arm64 only.</li>
-<li><strong>Controllers?</strong> — touch-first; the NoClip stick is on-screen.</li>
-<li><strong>Can I hide the badge for screenshots?</strong> — overlay settings; Hide damage numbers keeps footage clean.</li>
-<li><strong>Does it work offline / in airplane mode?</strong> — no. Online game, online tool.</li>
-</ul>
-
-<hr class="sketch">
-<footer>
-<p>Kuro is an unofficial fan project. Not affiliated with, endorsed by, or connected to HoYoverse or miHoYo.</p>
-</footer>
+<p><b>Banned?</b> Possible. See <a href="safety.html">Safety</a>, behave accordingly, alt first.</p>
+<p><b>New game version, Kuro broken?</b> Expected. Wait for the release that names your version. Never force old builds.</p>
+<p><b>iOS, PC, emulator?</b> Android arm64 only.</p>
+<p><b>Controllers?</b> Touch first. The NoClip stick is on screen.</p>
+<p><b>Clean screenshots?</b> Overlay settings, plus Hide damage numbers.</p>
+<p><b>Offline or airplane mode?</b> No. Online game, online tool.</p>
 
 </div>
+
+<footer class="site"><div class="wrap narrow">
+<p>Kuro is an unofficial fan project. Not affiliated with HoYoverse or miHoYo.</p>
+</div></footer>
+
 </body>
 </html>

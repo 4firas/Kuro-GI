@@ -3,48 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuro — changelog</title>
+<title>Kuro | changelog</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
 
-<header class="top">
-<svg class="logo" viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#fff600" stroke-width="3"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/><path d="M27 2v8M27 44v8M2 27h8M44 27h8" stroke="#dfcfc2" stroke-width="2"/></svg>
-<h1 class="brand">KURO<small>COMPANION OVERLAY</small></h1>
-<span class="ver">v2.0</span>
-</header>
+<div class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#dbc599" stroke-width="4"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/></svg>KURO</a>
+<nav class="navlinks"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="features.html">Features</a></nav>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.0">Download</a></span>
+</div></div>
 
-<nav class="nav">
-<a href="index.html">Home</a><a href="features.html">Features</a><a href="guide.html">Guide</a><a href="safety.html">Safety</a><a href="help.html">Help</a><a class="here" href="changelog.html">Changelog</a>
-</nav>
+<div class="wrap narrow doc">
 
-<hr class="sketch">
-
-<h2>v2.0 — current</h2>
-<p class="dim">Android arm64, game 7.0.0 &middot; <code>828b0141…99bf1470</code></p>
-<ul class="tight">
-<li><strong>Teleport Points</strong> — waypoints and statues of every region in one list, exact positions from the game's own scene data. Locked ones are the point: land next to them, auto-press, move on.</li>
-<li><strong>Auto farm</strong> — whole selections nearest-first with a 500 ms – 5 s wait slider, nudge-and-retry, skip-and-remember, forced switches with restore.</li>
-<li><strong>Offline points by region</strong> — chests, oculi, specialties, with approximate pins flagged and handled (arrive high, drop, No Fall on).</li>
-<li><strong>Items</strong> — 141 collectibles by name and picture, picked ones marked and teleportable.</li>
-<li><strong>ESP overhaul</strong> — ring + picture/glyph, plates, smoothing, fade, off-screen arrows, live per-kind counts.</li>
-<li><strong>Crash records</strong> — every death writes what, where, and the last minute of breadcrumbs; one button copies it for support.</li>
-<li><strong>Safer landings</strong> — transmit-first long hauls, guarded arrivals while terrain streams, no more falling through the world.</li>
-<li><strong>Smooth NoClip</strong> — position written at frame start; stick overlay.</li>
-<li><strong>Menu rework</strong> — Teleport and World reorganized top-down, every section says what it is.</li>
-</ul>
+<h2>v2.0, current</h2>
+<p class="dim">Android arm64, game 7.0.0. <code>828b0141…99bf1470</code></p>
+<div class="card">
+<p><b>Teleport Points.</b> Waypoints and statues of every region in one list, exact positions from the game's own scene data. Locked ones get visited on purpose.</p>
+<p><b>Auto farm.</b> Whole selections nearest first, 500 ms to 5 s wait slider, nudge and retry, skip and remember, forced switches with restore.</p>
+<p><b>Offline points by region.</b> Chests, oculi, specialties. Approximate pins flagged and handled.</p>
+<p><b>Items.</b> 141 collectibles by name and picture. Picked ones marked and teleportable.</p>
+<p><b>ESP overhaul.</b> Ring with picture or glyph, plates, smoothing, fade, off-screen arrows, live counts.</p>
+<p><b>Crash records.</b> Every death writes what, where, and the last minute of breadcrumbs. One button copies it.</p>
+<p><b>Safer landings.</b> Transmit-first long hauls, verified commits, guarded arrivals. No void drops, no bounce loops.</p>
+<p><b>Smooth NoClip.</b> Position written at frame start, stick overlay.</p>
+<p><b>Menu rework.</b> Teleport and World reorganized top-down, every section says what it is.</p>
+</div>
 
 <h2>Older</h2>
-<ul class="tight">
-<li><strong>v1.4 – v1.1</strong> — early flight builds: speed, reach, first ESP, first offline chests. Rough, useful, superseded.</li>
-</ul>
-
-<hr class="sketch">
-<footer>
-<p>Kuro is an unofficial fan project. Not affiliated with, endorsed by, or connected to HoYoverse or miHoYo.</p>
-</footer>
+<p><b>v1.4 down to v1.1.</b> Early flight builds. Speed, reach, first ESP, first offline chests. Rough, useful, superseded.</p>
 
 </div>
+
+<footer class="site"><div class="wrap narrow">
+<p>Kuro is an unofficial fan project. Not affiliated with HoYoverse or miHoYo.</p>
+</div></footer>
+
 </body>
 </html>
