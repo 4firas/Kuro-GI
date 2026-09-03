@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuro — safety</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+<svg class="logo" viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#fff600" stroke-width="3"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/><path d="M27 2v8M27 44v8M2 27h8M44 27h8" stroke="#dfcfc2" stroke-width="2"/></svg>
+<h1 class="brand">KURO<small>COMPANION OVERLAY</small></h1>
+<span class="ver">v2.0</span>
+</header>
+
+<nav class="nav">
+<a href="index.html">Home</a><a href="features.html">Features</a><a href="guide.html">Guide</a><a class="here" href="safety.html">Safety</a><a href="help.html">Help</a><a href="changelog.html">Changelog</a>
+</nav>
+
+<hr class="sketch">
+
+<h2>Safety</h2>
+<p>Cheating in an online game can get the account banned, up to permanently. Kuro does not hide from the server — it labels, per switch, how exposed you are, and routes movement through the quietest available path. Read this page the way you'd read the dosage label.</p>
+<p><span class="stamp">NO TOOL IS BAN-PROOF. ALT ACCOUNTS EXIST FOR A REASON.</span></p>
+
+<h2>The pills</h2>
+<table>
+<tr><th>Pill</th><th>Meaning</th><th>Examples</th></tr>
+<tr><td><span class="pill local">local</span></td><td>Stays on your device. Display, camera, overlay.</td><td>FOV, hide damage numbers, ESP visuals, FPS cap, No fall damage.</td></tr>
+<tr><td><span class="pill server">server-checkable</span></td><td>Nothing is sent, but the results could look wrong in your data.</td><td>Speed, NoClip, god mode, damage numbers that don't add up.</td></tr>
+<tr><td><span class="pill sent">sent to server</span></td><td>Directly visible: unlocks, activations, transmits, picks.</td><td>Waypoint unlocks, statue activations, map transmit, opening chests.</td></tr>
+</table>
+<div class="note">Unlocking a waypoint <em>through Kuro</em> is the same prompt a walking player presses — the activation itself is normal play. What surrounds it (how you got there, how fast, how many per minute) is what you control.</div>
+
+<h2>How movement stays quiet</h2>
+<ul class="tight">
+<li><strong>Safe mode (default).</strong> Long hauls open with the game's own map transmit — one normal-looking load — then finish in short hops inside the engine's no-packet envelope. The loading screen is the feature working.</li>
+<li><strong>Direct jumps</strong> (safe mode off, or no waypoint near the target) are single displacements the server can see. Fewer, shorter, slower is the entire discipline.</li>
+<li><strong>Paced mode</strong> crawls the distance at a set speed instead of jumping. Slowest, quietest.</li>
+<li><strong>Reach is capped at 40 m</strong> — past that the game stops answering, so Kuro stops asking.</li>
+<li><strong>After long jumps</strong> the landing is guarded while terrain streams in, so you don't fall through the world.</li>
+</ul>
+
+<h2>Rules that matter</h2>
+<ul class="tight">
+<li>Farm at human hours, human pace. The delay slider exists for a reason; 500 ms across 200 chests at 4 a.m. is a confession.</li>
+<li>Don't stack red pills. Speed × NoClip × god mode × instant clears, all at once, is how accounts end.</li>
+<li>Cutscenes and domains: keep movement switches off where the game watches closely.</li>
+<li>One account per device state. Don't farm on the main and play legit on the same install five minutes later and assume the two don't share a log.</li>
+<li>New game version? Wait for a Kuro release that names it. Old builds on new clients break in loud ways.</li>
+</ul>
+
+<h2>If the worst happens</h2>
+<p>A ban is a server decision; nothing on your device appeals it. What helps the rest of us: Settings → If something goes wrong → copy the crash record and send it in, so the cause gets fixed instead of repeated. See <a href="help.html">Help</a>.</p>
+
+<hr class="sketch">
+<footer>
+<p>Kuro is an unofficial fan project. Not affiliated with, endorsed by, or connected to HoYoverse or miHoYo.</p>
+</footer>
+
+</div>
+</body>
+</html>

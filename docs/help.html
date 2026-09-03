@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuro — help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+<svg class="logo" viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#fff600" stroke-width="3"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/><path d="M27 2v8M27 44v8M2 27h8M44 27h8" stroke="#dfcfc2" stroke-width="2"/></svg>
+<h1 class="brand">KURO<small>COMPANION OVERLAY</small></h1>
+<span class="ver">v2.0</span>
+</header>
+
+<nav class="nav">
+<a href="index.html">Home</a><a href="features.html">Features</a><a href="guide.html">Guide</a><a href="safety.html">Safety</a><a class="here" href="help.html">Help</a><a href="changelog.html">Changelog</a>
+</nav>
+
+<hr class="sketch">
+
+<h2>Help</h2>
+
+<h3>The game crashed</h3>
+<p>Next launch, open Settings → <strong>If something goes wrong</strong>. If the last session died, the record is there: what died, where, which switches were on, and the last minute of what Kuro was doing — as codes, no account data. <strong>Copy the record to Downloads</strong> and send the file. That record is usually the whole diagnosis.</p>
+
+<h3>A teleport stopped short / took forever</h3>
+<p>Read the status line at the top of the Teleport page — it always says which state it's in:</p>
+<ul class="tight">
+<li><em>transmitting…</em> — the map-transmit leg, with its loading screen. Up to ~10 s on a slow load.</li>
+<li><em>X m to go, hop N</em> — paced mode crawling. Check your pace, or switch paced off.</li>
+<li><em>arrived / moved to …</em> — done; if you're not where you expected, say where you are vs where you aimed.</li>
+<li><em>gave up … short after N hops</em> — beyond the hop budget. Report it with from → to.</li>
+<li><em>cancelled</em> — something (you, or a new press) stopped it.</li>
+</ul>
+
+<h3>Landed under the map</h3>
+<p>Should be fixed in 2.0 (the landing is guarded while terrain streams). If it still happens: where from → where to, approximate or exact pin, and whether No Fall Damage was on.</p>
+
+<h3>A waypoint won't unlock</h3>
+<p>Go stand next to it through Teleport Points. If Auto Waypoint presses and it opens — working as designed. If no prompt appears at all, it's quest-sealed: finish the local quest first. No tool opens those.</p>
+
+<h3>Nothing presses / no button at range</h3>
+<ul class="tight">
+<li>Is the matching Auto switch actually on? Nothing presses with its switch off — by design.</li>
+<li>Range extensions evaluate while you move. Walk toward the thing from 30+ m and watch where the prompt pops; standing still proves nothing.</li>
+<li>Wait for the badge after launch. Early presses land before the hooks do.</li>
+</ul>
+
+<h3>Menu / overlay issues</h3>
+<p>Badge missing after load → relaunch once; still missing → send a crash record (there may be a silent death behind it). Sliders jumping → drag, don't tap. Menu open but frozen → close it, wait two seconds, reopen.</p>
+
+<h3>FAQ</h3>
+<ul class="tight">
+<li><strong>Ban?</strong> — see <a href="safety.html">Safety</a>. Short version: possible, behave accordingly, alt first.</li>
+<li><strong>New game version out, Kuro broken?</strong> — expected. Wait for the release that names your version; don't force old builds.</li>
+<li><strong>iOS / PC / emulator?</strong> — Android arm64 only.</li>
+<li><strong>Controllers?</strong> — touch-first; the NoClip stick is on-screen.</li>
+<li><strong>Can I hide the badge for screenshots?</strong> — overlay settings; Hide damage numbers keeps footage clean.</li>
+<li><strong>Does it work offline / in airplane mode?</strong> — no. Online game, online tool.</li>
+</ul>
+
+<hr class="sketch">
+<footer>
+<p>Kuro is an unofficial fan project. Not affiliated with, endorsed by, or connected to HoYoverse or miHoYo.</p>
+</footer>
+
+</div>
+</body>
+</html>

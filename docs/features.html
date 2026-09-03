@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuro — features</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+<svg class="logo" viewBox="0 0 54 54" fill="none"><circle cx="27" cy="27" r="20" stroke="#fff600" stroke-width="3"/><circle cx="27" cy="27" r="6" fill="#791c1c" stroke="#dfcfc2" stroke-width="2"/><path d="M27 2v8M27 44v8M2 27h8M44 27h8" stroke="#dfcfc2" stroke-width="2"/></svg>
+<h1 class="brand">KURO<small>COMPANION OVERLAY</small></h1>
+<span class="ver">v2.0</span>
+</header>
+
+<nav class="nav">
+<a href="index.html">Home</a><a class="here" href="features.html">Features</a><a href="guide.html">Guide</a><a href="safety.html">Safety</a><a href="help.html">Help</a><a href="changelog.html">Changelog</a>
+</nav>
+
+<hr class="sketch">
+
+<h2>Features</h2>
+<p>Everything lives behind the floating badge. Quick buttons beside it jump straight to a quest marker, chest, oculus, waypoint, or picked item. Every switch carries a risk pill: <span class="pill local">local</span> stays on your device, <span class="pill server">server-checkable</span> could be noticed in data, <span class="pill sent">sent to server</span> is directly visible. Details in <a href="safety.html">Safety</a>.</p>
+
+<h2>Player</h2>
+<div class="card"><h3>Protection</h3>
+<ul class="tight">
+<li><strong>God mode</strong> <span class="pill server">server-checkable</span> — damage doesn't land.</li>
+<li><strong>No fall damage</strong> <span class="pill local">local</span> — turn it on before dropping onto approximate pins (see Teleport).</li>
+</ul></div>
+<div class="card"><h3>Movement</h3>
+<ul class="tight">
+<li><strong>Speed</strong> <span class="pill server">server-checkable</span> — a multiplier on your movement. Keep it sane; absurd values are the oldest ban in the book.</li>
+<li><strong>NoClip flight</strong> <span class="pill server">server-checkable</span> — gravity off, velocity-driven flight with an on-screen stick. Smooth since 2.0 (the position is now written at the start of the frame).</li>
+</ul></div>
+
+<h2>Combat</h2>
+<div class="card">
+<ul class="tight">
+<li>Enemy targeting and damage controls <span class="pill server">server-checkable</span>.</li>
+<li><strong>Hide damage numbers</strong> <span class="pill local">local</span> — display only. Your screenshots stay clean; nothing about the damage changes.</li>
+</ul></div>
+
+<h2>World</h2>
+<div class="card"><h3>ESP</h3>
+<p>Marks what is loaded around you: a ring with a picture or a symbol, name and distance, with smoothing, fade in/out, off-screen arrows, and an optional outline box. Toggles for names, distance, arrows, boxes, and max distance.</p></div>
+<div class="card"><h3>What to mark</h3>
+<p>People and things by kind — chests, waypoints, statues, puzzles, monsters, NPCs, players, gadgets — each with a live count of what's in sight. Done ones (visited, or activated per the map) are not counted and not offered twice.</p></div>
+<div class="card"><h3>Items</h3>
+<p>Every gatherable, ore, oculus and pickup of this version — 141 of them — by name and picture. Pick one and it is marked in the world and teleportable; nothing else of its kind is shown. <em>Only picked items</em> hides everything else.</p></div>
+<div class="card"><h3>Time &amp; weather</h3><p>Clock and weather controls for screenshots and farming conditions.</p></div>
+
+<h2>Teleport</h2>
+<div class="card"><h3>Go — nearest thing in sight</h3>
+<p>Chest, waypoint, statue: the nearest new one around you, one press. Landing is slightly above the target, never inside it.</p></div>
+<div class="card"><h3>Offline points</h3>
+<p>Everything the packs and the map know, by region — <strong>chests, oculi, specialties</strong> from measured world positions, plus newer regions from map pins (flagged <em>approximate</em>: you arrive high and drop, so turn on No Fall Damage).</p>
+<ul class="tight">
+<li><strong>Go to nearest</strong> — the closest unfinished point of the selection.</li>
+<li><strong>Auto farm</strong> — the whole selection, nearest first. Waits your delay at each point (500 ms – 5 s slider), collects through Auto Loot / Auto Open / reach, judges, nudges once onto the exact spot if needed, skips if still there. Collected points are remembered on disk, so a second run only visits what's left. <em>Forget collected</em> resets.</li>
+<li><strong>Teleport Points</strong> — every waypoint and statue of the region, positions from the game's own scene data, exact. <strong>A locked one is the whole point</strong>: you go stand next to it and Auto Waypoint / Auto Statue presses the prompt, like a walk-up. Only activated and already-pressed ones are skipped. If the game offers no prompt at all (quest-sealed), the farm moves on.</li>
+</ul></div>
+<div class="card"><h3>Picked items &amp; quest marker</h3>
+<p>Teleport to the nearest picked item, or track the quest marker and jump to it.</p></div>
+<div class="card"><h3>How it moves</h3>
+<p>Safe mode is on by default: long hauls start with the game's own map transmit (indistinguishable from a map click), then close the remainder in short hops that stay inside the engine's no-packet envelope. After any long jump, gravity holds briefly and the position is guarded while the terrain streams in, so you don't fall through the world. Paced mode (optional) crawls the distance at a set speed instead of jumping. Save point / Recall / Up 5 m included.</p></div>
+
+<h2>Settings</h2>
+<div class="card">
+<ul class="tight">
+<li><strong>Display</strong> — FOV, FPS cap.</li>
+<li><strong>Overlay</strong> — badge, quick buttons, menu behavior.</li>
+<li><strong>Profiles</strong> — save and swap whole configurations.</li>
+<li><strong>Harvest</strong> — records what you walk past; export the count as JSON.</li>
+<li><strong>If something goes wrong</strong> — the last crash record, if any, with a button that copies it for support. See <a href="help.html">Help</a>.</li>
+<li><strong>Safety</strong> — the master switches behind the risk pills.</li>
+</ul></div>
+
+<hr class="sketch">
+<footer>
+<p>Kuro is an unofficial fan project. Not affiliated with, endorsed by, or connected to HoYoverse or miHoYo.</p>
+</footer>
+
+</div>
+</body>
+</html>
