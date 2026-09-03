@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuro | menu demo</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.menu { max-width: 560px; margin: 26px auto 10px; background: rgba(20,26,24,.97);
+  border: 1px solid rgba(219,197,153,.25); border-radius: 18px; overflow: hidden; }
+.mtabs { display: flex; border-bottom: 1px solid rgba(219,197,153,.18); }
+.mtabs button { flex: 1; background: none; border: none; color: #96886c;
+  font: inherit; font-size: .92rem; padding: 13px 4px; cursor: pointer; }
+.mtabs button.on { color: #dbc599; box-shadow: inset 0 -2px 0 #dbc599; }
+.mpage { display: none; padding: 14px 18px 22px; max-height: 640px; overflow-y: auto; }
+.mpage.on { display: block; }
+.msec { display: flex; align-items: center; gap: 10px; margin: 18px 0 6px;
+  font-weight: 800; font-size: .95rem; letter-spacing: .06em; color: #dbc599; }
+.msec::before { content: ""; width: 8px; height: 8px; background: #dbc599; transform: rotate(45deg); flex: none; }
+.msec::after { content: ""; height: 1px; flex: 1; background: rgba(219,197,153,.22); }
+.mnote { color: #96886c; font-size: .85rem; margin: 4px 0 8px; }
+.mstatus { background: #0c100f; border: 1px solid rgba(219,197,153,.18); border-radius: 10px;
+  padding: 9px 13px; font-size: .87rem; color: #dbc599; margin: 10px 0; min-height: 42px; }
+.mrow { display: flex; align-items: center; gap: 10px; background: rgba(28,37,36,.55);
+  border-radius: 12px; padding: 9px 13px; margin: 7px 0; }
+.mlab { flex: 1; font-size: .93rem; }
+.mlab .pill { font-size: .68rem; margin-left: 6px; }
+.msw { position: relative; width: 46px; height: 26px; flex: none; cursor: pointer; }
+.msw .tr { position: absolute; inset: 0; border-radius: 999px; background: #33474f;
+  border: 1px solid rgba(219,197,153,.25); transition: background .18s; }
+.msw .kb { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%;
+  background: #96886c; transition: left .18s, background .18s; }
+.msw.on .tr { background: #dbc599; }
+.msw.on .kb { left: 23px; background: #141a18; }
+.mrow input[type=range] { flex: 1; accent-color: #dbc599; }
+.mval { min-width: 52px; text-align: right; font-size: .85rem; color: #adffa3; }
+.mpill { border: 1px solid rgba(219,197,153,.28); background: linear-gradient(180deg,#3d565f,#33474f);
+  color: #dbc599; border-radius: 999px; padding: 8px 20px; font: inherit; font-size: .9rem;
+  cursor: pointer; margin: 4px 6px 4px 0; }
+.mpill:hover { border-color: rgba(219,197,153,.6); }
+.mpill.primary { background: #dbc599; border-color: #dbc599; color: #141a18; font-weight: 700; }
+.mpill:disabled { opacity: .35; cursor: default; }
+.mchips { display: flex; gap: 7px; overflow-x: auto; padding: 4px 0 8px; }
+.mchip { flex: none; border: 1px solid rgba(219,197,153,.25); background: transparent; color: #96886c;
+  border-radius: 999px; padding: 6px 15px; font: inherit; font-size: .85rem; cursor: pointer; }
+.mchip.on { color: #141a18; background: #dbc599; border-color: #dbc599; font-weight: 700; }
+.mchip.multi.on { background: rgba(219,197,153,.16); color: #dbc599; }
+.mfold { border: 1px solid rgba(219,197,153,.16); border-radius: 12px; margin: 8px 0; overflow: hidden; }
+.mfoldh { width: 100%; background: rgba(28,37,36,.55); border: none; color: #dbc599;
+  font: inherit; font-size: .93rem; text-align: left; padding: 10px 14px; cursor: pointer; }
+.mfoldh::after { content: "+"; float: right; color: #96886c; }
+.mfold.open .mfoldh::after { content: "–"; }
+.mfoldb { display: none; padding: 4px 14px 12px; }
+.mfold.open .mfoldb { display: block; }
+.msearch { width: 100%; background: #0c100f; border: 1px solid rgba(219,197,153,.25);
+  border-radius: 10px; color: #dbc599; font: inherit; font-size: .9rem; padding: 9px 13px; margin: 6px 0; }
+.mitems { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; max-height: 220px; overflow-y: auto; }
+.mitem { border: 1px solid rgba(219,197,153,.16); background: transparent; color: #96886c;
+  border-radius: 10px; font: inherit; font-size: .76rem; padding: 7px 4px; cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mitem.on { color: #141a18; background: #dbc599; border-color: #dbc599; font-weight: 700; }
+.mcrash { background: #0c100f; border: 1px solid rgba(219,197,153,.18); border-radius: 10px;
+  padding: 10px 13px; font-family: ui-monospace, Menlo, monospace; font-size: .75rem;
+  color: #96886c; white-space: pre-wrap; margin: 6px 0; }
+.democap { text-align: center; color: #96886c; font-size: .83rem; margin: 0 0 30px; }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+<a class="brand" href="index.html"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="#141a18" stroke="#dbc599" stroke-width="2.5"/><circle cx="27" cy="27" r="18.5" fill="none" stroke="#557283" stroke-width="1"/><text x="27" y="28.5" text-anchor="middle" dominant-baseline="central" font-family="HYWenHei,'Hiragino Sans GB',sans-serif" font-size="24" font-weight="800" fill="#dbc599">K</text></svg>KURO</a>
+<nav class="navlinks"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="features.html">Features</a><a href="demo.html">Demo</a><a class="here" href="demo.html">Demo</a></nav>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.0">Download</a></span>
+</div></div>
+
+<div class="wrap narrow">
+<section class="block center">
+<h2 class="sec">The menu, in your browser</h2>
+<p class="sub">A working recreation. Tabs switch, switches flip, farms run. Positions and counts are simulated, the layout and labels are the real thing.</p>
+</section>
+
+<div class="menu" id="menu">
+<div class="mtabs" id="mtabs">
+<button data-p="player" class="on">Player</button><button data-p="combat">Combat</button><button data-p="world">World</button><button data-p="tp">Teleport</button><button data-p="set">Settings</button>
+</div>
+
+<div class="mpage on" id="p-player">
+<div class="msec">PROTECTION</div>
+<div class="mrow"><span class="mlab">God mode <i class="pill server">server-checkable</i></span><span class="msw" data-k="god"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">No fall damage <i class="pill local">local</i></span><span class="msw on" data-k="nofall"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="msec">MOVEMENT</div>
+<div class="mrow"><span class="mlab">Speed <i class="pill server">server-checkable</i></span><span class="msw" data-k="speed"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Multiplier</span><input type="range" min="1" max="3" step="0.1" value="1.5" data-v="speedmul"><span class="mval">1.5</span></div>
+<div class="mrow"><span class="mlab">NoClip <i class="pill server">server-checkable</i></span><span class="msw" data-k="noclip"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Fly speed</span><input type="range" min="5" max="60" step="1" value="20" data-v="flyspeed"><span class="mval">20</span></div>
+</div>
+
+<div class="mpage" id="p-combat">
+<div class="msec">COMBAT</div>
+<div class="mrow"><span class="mlab">Damage multiplier <i class="pill server">server-checkable</i></span><span class="msw" data-k="dmg"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Times</span><input type="range" min="1" max="10" step="1" value="3" data-v="dmgmul"><span class="mval">3</span></div>
+<div class="mrow"><span class="mlab">Hide damage numbers <i class="pill local">local</i></span><span class="msw on" data-k="hidedmg"><span class="tr"></span><span class="kb"></span></span></div>
+<p class="mnote">Hiding numbers changes the display only. The damage stays.</p>
+</div>
+
+<div class="mpage" id="p-world">
+<div class="msec">ESP</div>
+<div class="mrow"><span class="mlab">ESP <i class="pill local">local</i></span><span class="msw on" data-k="esp"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Names</span><span class="msw on" data-k="espname"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Distance</span><span class="msw on" data-k="espdist"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Arrows to things off screen</span><span class="msw on" data-k="esparr"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Max distance</span><input type="range" min="0" max="500" step="10" value="200" data-v="espmax"><span class="mval">200 m</span></div>
+<div class="msec">WHAT TO MARK</div>
+<p class="mnote">People and things by kind. Collectibles live under Items, not here.</p>
+<div class="mchips" id="espkinds"></div>
+<div class="msec">ITEMS</div>
+<p class="mnote">Every gatherable, ore, oculus and pickup, by name. A picked one gets marked and becomes teleportable.</p>
+<div class="mrow"><span class="mlab">Only picked items</span><span class="msw" data-k="itemsonly"><span class="tr"></span><span class="kb"></span></span></div>
+<input class="msearch" id="itemq" placeholder="Search 141 items...">
+<div class="mitems" id="itemgrid"></div>
+<div style="margin-top:8px"><button class="mpill primary" id="b-nearitem">Nearest picked item</button><button class="mpill" id="b-unpick">Unpick all</button></div>
+<div class="msec">TIME</div>
+<div class="mrow"><span class="mlab">Hour</span><input type="range" min="0" max="24" step="1" value="12" data-v="hour"><span class="mval">12</span></div>
+</div>
+
+<div class="mpage" id="p-tp">
+<div class="mstatus" id="tstatus">idle</div>
+<div class="msec">GO</div>
+<p class="mnote">Nearest thing in sight.</p>
+<div><button class="mpill primary" data-go="Chest">Chest</button><button class="mpill" data-go="Waypoint">Waypoint</button><button class="mpill" data-go="Statue">Statue</button></div>
+<div class="mfold open" id="f-offline">
+<button class="mfoldh">Offline points</button>
+<div class="mfoldb">
+<div class="mchips" id="regions"></div>
+<div class="mchips" id="kinds"></div>
+<div><button class="mpill primary" id="b-gonear">Go to nearest</button><button class="mpill" id="b-farm">Auto farm</button><button class="mpill" id="b-stop" style="display:none">Stop</button></div>
+<div class="mrow"><span class="mlab">Wait at each point</span><input type="range" min="500" max="5000" step="100" value="1500" data-v="farmdelay"><span class="mval">1500 ms</span></div>
+<p class="mnote">Locked teleport points get visited too. Only activated and pressed ones are skipped.</p>
+</div>
+</div>
+<div class="mfold" id="f-picked">
+<button class="mfoldh">Picked items (<span id="pickedn">0</span>)</button>
+<div class="mfoldb"><p class="mnote">Pick them under World, Items.</p></div>
+</div>
+<div class="mfold" id="f-quest">
+<button class="mfoldh">Quest marker</button>
+<div class="mfoldb">
+<div class="mrow"><span class="mlab">Track quest marker</span><span class="msw" data-k="quest"><span class="tr"></span><span class="kb"></span></span></div>
+<div><button class="mpill" id="b-quest">Go to quest</button></div>
+</div>
+</div>
+<div class="msec">HOW IT MOVES</div>
+<div class="mrow"><span class="mlab">Safe mode</span><span class="msw on" data-k="safe"><span class="tr"></span><span class="kb"></span></span></div>
+<div class="mrow"><span class="mlab">Pace</span><input type="range" min="1" max="60" step="1" value="15" data-v="pace"><span class="mval">15 m/s</span></div>
+<div class="msec">ADVANCED</div>
+<div class="mfold" id="f-tx">
+<button class="mfoldh">Engine transmit by point id</button>
+<div class="mfoldb">
+<div class="mrow"><span class="mlab">Point id</span><input type="range" min="0" max="2000" step="1" value="25" data-v="txid"><span class="mval">25</span></div>
+<div><button class="mpill" id="b-tx">Transmit to point id</button></div>
+</div>
+</div>
+<div><button class="mpill" id="b-save">Save point</button><button class="mpill" id="b-recall">Recall</button><button class="mpill" id="b-up">Up 5 m</button></div>
+</div>
+
+<div class="mpage" id="p-set">
+<div class="msec">DISPLAY</div>
+<div class="mrow"><span class="mlab">FOV <i class="pill local">local</i></span><input type="range" min="40" max="120" step="1" value="60" data-v="fov"><span class="mval">60</span></div>
+<div class="mrow"><span class="mlab">FPS cap <i class="pill local">local</i></span><input type="range" min="30" max="120" step="1" value="60" data-v="fps"><span class="mval">60</span></div>
+<div class="msec">PROFILES</div>
+<div class="mchips" id="profiles"></div>
+<div><button class="mpill" id="b-profsave">Save here</button></div>
+<div class="msec">HARVEST</div>
+<div class="mrow"><span class="mlab">Harvest <i class="pill local">local</i></span><span class="msw" data-k="harvest"><span class="tr"></span><span class="kb"></span></span></div>
+<div><button class="mpill" id="b-export">Export JSON</button> <span class="mnote" id="harvnote">walk to count</span></div>
+<div class="msec">IF SOMETHING GOES WRONG</div>
+<div class="mcrash" id="crashbox">no crash on record.
+sessions end, records stay. when one lands here,
+copy it and send it in.</div>
+<div><button class="mpill" id="b-copy">Copy the record</button></div>
+<div class="msec">SAFETY</div>
+<p class="mnote"><span class="pill local">local</span> stays on your device. <span class="pill server">server-checkable</span> could show in your data. <span class="pill sent">sent to server</span> is directly visible. Full page: <a href="safety.html">Safety</a>.</p>
+</div>
+</div>
+<p class="democap">Interactive recreation for guides. Statuses and counts are simulated.</p>
+</div>
+
+<footer class="site"><div class="wrap narrow">
+<p>Kuro is an unofficial fan project. Not affiliated with HoYoverse or miHoYo.</p>
+</div></footer>
+
+<script>
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const REGIONS = ["Mondstadt","Dragonspine","Liyue","The Chasm","Chenyu Vale","Inazuma","Enkanomiya","Sumeru","Fontaine","Sea of Bygone Eras","Natlan","Sacred Mountain","Nod-Krai","Snezhnaya"];
+const COUNTS = {"Mondstadt":[510,66,1753,52],"Dragonspine":[691,77,264,52],"Liyue":[1141,131,2964,75],"The Chasm":[420,81,406,75],"Chenyu Vale":[1087,50,4,75],"Inazuma":[1473,183,2034,48],"Enkanomiya":[412,59,468,48],"Sumeru":[2823,399,3473,120],"Fontaine":[2155,275,408,72],"Sea of Bygone Eras":[159,36,0,72],"Natlan":[917,271,372,135],"Sacred Mountain":[134,9,91,135],"Nod-Krai":[438,197,633,155],"Snezhnaya":[306,140,323,155]};
+const KINDS = ["Chests","Oculi","Specialties","Teleport Points"];
+const ESPKINDS = [["Chests",3],["Waypoints",2],["Statues",1],["Puzzles",5],["Monsters",6],["NPCs",2],["Players",1],["Gadgets",4]];
+const ITEMS = ["Ajilenakh Nut","Amakumo Fruit","Amethyst Lump","Anemoculus","Apple","Bamboo Shoot","Berry","Beryl Conch","Bird Egg","Brilliant Chrysanthemum","Butterfly Wings","Cabbage","Cacahuatl","Calla Lily","Carrot","Cecilia","Chilled Meat","Clearwater Jade","Cor Lapis","Crimson Agate","Cryoculus","Crystal Chunk","Crystal Core","Crystal Marrow","Dandelion Seed","Dendrobium","Dendroculus","Dracolite","Electro Crystal","Electroculus","Embercore Flower","Fish","Flaming Flower Stamen","Flockingweed","Fluorescent Fungus","Fowl","Frostfairy Flower","Frostlamp Flower","Geoculus","Glaciafruit","Glaze Lily","Glowing Hornshroom","Golden Fern","Grainfruit","Harra Fruit","Henna Berry","Horsetail","Hydroculus","Icy Pebble","Iron Chunk","Jueyun Chili","Kalpalata Lotus","Key Sigil","Lakelight Lily","Lakkaberry","Lavender Melon","Lotus Head","Lumenspar","Lumenstone Ore","Lumidouce Bell","Lumifluorite","Lumitoile","Lunoculus","Magical Crystal Chunk","Marcotte","Matsutake","Midsommar Berry","Mint","Mist Flower Corolla","Moonfall Silver","Mora","Mourning Flower","Mushroom","Naku Weed","Nilotpala Lotus","Noctilucous Jade","Nocturnal Blossom","Onikabuto","Padisarah","Philanemo Mushroom","Pine Amber","Pinecone","Pluie Lotus","Potato","Pyroculus","Qingxin","Quenepa Berry","Radish","Rainbow Rose","Rainbowdrop Crystal","Raw Meat","Red Beet","Red Berryshroom","Rimecurrant","Romaritime Flower","Rukkhashava Mushrooms","Sakura Bloom","Sand Grease Pupa","Sango Pearl","Saurian Claw Succulent","Sea Ganoderma","Seagrass","Silk Flower","Silver Lotus","Skysplit Gembloom","Small Lamp Grass","Snapdragon","Snowball Flower","Spinel Fruit","Spirit Carp","Spring of the First Dewdrop","Starconch","Starshroom","Starsilver","Sumeru Rose","Sunsettia","Sweet Flower","Teardrop of the Moon","Tidalga","Tomato","Trishiraite","Valberry","Violetgrass","Viparyas","Wheat","White Iron Chunk","Windwheel Aster","Winter Icelea","Withering Purpurbloom","Wolfhook","Wood","Zaytun Peach"];
+let region = "Mondstadt", kind = 0, picked = new Set(), farmTimer = null, farmN = [0,0], forced = null;
+const status = t => { $("#tstatus").textContent = t; };
+
+// tabs
+$$("#mtabs button").forEach(b => b.onclick = () => {
+  $$("#mtabs button").forEach(x => x.classList.remove("on"));
+  $$(".mpage").forEach(x => x.classList.remove("on"));
+  b.classList.add("on"); $("#p-" + b.dataset.p).classList.add("on");
+});
+// switches
+$$(".msw").forEach(sw => sw.onclick = () => sw.classList.toggle("on"));
+// sliders
+$$("input[type=range]").forEach(r => r.oninput = () => {
+  r.closest(".mrow").querySelector(".mval").textContent =
+    r.dataset.v === "espmax" ? r.value + " m" :
+    r.dataset.v === "farmdelay" ? r.value + " ms" :
+    r.dataset.v === "pace" ? r.value + " m/s" : r.value;
+});
+// folds
+$$(".mfoldh").forEach(h => h.onclick = () => h.parentElement.classList.toggle("open"));
+// regions + kinds
+const rbox = $("#regions"), kbox = $("#kinds");
+REGIONS.forEach(r => {
+  const b = document.createElement("button");
+  b.className = "mchip" + (r === region ? " on" : ""); b.textContent = r;
+  b.onclick = () => { region = r; [...rbox.children].forEach(x => x.classList.toggle("on", x === b)); paintKinds(); };
+  rbox.appendChild(b);
+});
+function paintKinds() {
+  kbox.innerHTML = "";
+  KINDS.forEach((k, i) => {
+    const b = document.createElement("button");
+    b.className = "mchip" + (i === kind ? " on" : "");
+    b.textContent = k + " " + COUNTS[region][i];
+    b.onclick = () => { kind = i; paintKinds(); };
+    kbox.appendChild(b);
+  });
+}
+paintKinds();
+// esp kinds (multi)
+const ek = $("#espkinds");
+ESPKINDS.forEach(([k, n], i) => {
+  const b = document.createElement("button");
+  b.className = "mchip multi" + (i < 3 ? " on" : ""); b.textContent = k + " " + n;
+  b.onclick = () => b.classList.toggle("on");
+  ek.appendChild(b);
+});
+// items
+const grid = $("#itemgrid");
+function paintItems(q) {
+  grid.innerHTML = "";
+  ITEMS.filter(n => !q || n.toLowerCase().includes(q)).slice(0, 120).forEach(n => {
+    const b = document.createElement("button");
+    b.className = "mitem" + (picked.has(n) ? " on" : ""); b.textContent = n; b.title = n;
+    b.onclick = () => { picked.has(n) ? picked.delete(n) : picked.add(n); b.classList.toggle("on"); $("#pickedn").textContent = picked.size; };
+    grid.appendChild(b);
+  });
+}
+paintItems("");
+$("#itemq").oninput = e => paintItems(e.target.value.toLowerCase());
+$("#b-unpick").onclick = () => { picked.clear(); $("#pickedn").textContent = 0; paintItems($("#itemq").value.toLowerCase()); status("unpicked everything"); };
+$("#b-nearitem").onclick = () => status(picked.size ? "nearest picked item, " + (20 + Math.floor(Math.random() * 300)) + " m" : "pick something first, under World, Items");
+// go
+$$("[data-go]").forEach(b => b.onclick = () =>
+  status(b.dataset.go + ", " + region + ", " + (20 + Math.floor(Math.random() * 380)) + " m"));
+// farm
+const farmBtns = on => { $("#b-gonear").style.display = on ? "none" : ""; $("#b-farm").style.display = on ? "none" : ""; $("#b-stop").style.display = on ? "" : "none"; };
+$("#b-gonear").onclick = () => status("nearest " + KINDS[kind].toLowerCase() + " in " + region + ", " + (20 + Math.floor(Math.random() * 380)) + " m");
+$("#b-farm").onclick = () => {
+  forced = ["autoWaypoint","autoStatue","reach","airborne","loot","open"];
+  farmN = [0, 0]; farmBtns(true);
+  status("farming " + KINDS[kind].toLowerCase() + ", 0 done, 0 skipped");
+  farmTimer = setInterval(() => {
+    Math.random() < 0.72 ? farmN[0]++ : farmN[1]++;
+    status("farming " + KINDS[kind].toLowerCase() + ", " + farmN[0] + " done, " + farmN[1] + " skipped");
+  }, 800);
+};
+$("#b-stop").onclick = () => {
+  clearInterval(farmTimer); farmBtns(false); forced = null;
+  status("stopped, " + farmN[0] + " collected, " + farmN[1] + " skipped");
+};
+// quest / transmit / save
+$("#b-quest").onclick = () => status("marker 1234 567 890");
+$("#b-tx").onclick = e => {
+  const id = e.target.closest(".mfoldb").querySelector("[data-v=txid]").value;
+  status("transmit to point " + id + ", then " + (5 + Math.floor(Math.random() * 40)) + " m on foot");
+};
+$("#b-save").onclick = () => status("saved 2115 332 1725");
+$("#b-recall").onclick = () => status("moved to 2115 332 1725");
+$("#b-up").onclick = () => status("moved up 5 m");
+// profiles / harvest / copy
+["Farm","Screenshots","Legit"].forEach((p, i) => {
+  const b = document.createElement("button");
+  b.className = "mchip" + (i === 0 ? " on" : ""); b.textContent = p;
+  b.onclick = () => [...$("#profiles").children].forEach(x => x.classList.toggle("on", x === b));
+  $("#profiles").appendChild(b);
+});
+$("#b-profsave").onclick = () => status("profile saved");
+let harv = 0;
+setInterval(() => { if (document.querySelector('[data-k=harvest]').classList.contains("on")) { harv += Math.floor(Math.random() * 3); $("#harvnote").textContent = harv + " counted"; } }, 2000);
+$("#b-export").onclick = () => { $("#harvnote").textContent = "exported " + harv + " rows"; };
+$("#b-copy").onclick = e => {
+  const t = $("#crashbox").textContent;
+  (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(
+    () => e.target.textContent = "Copied",
+    () => e.target.textContent = "Copy failed");
+  setTimeout(() => e.target.textContent = "Copy the record", 1500);
+};
+</script>
+
+</body>
+</html>
