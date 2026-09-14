@@ -11,14 +11,15 @@
 <div class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="#141a18" stroke="#dbc599" stroke-width="2.5"/><circle cx="27" cy="27" r="18.5" fill="none" stroke="#557283" stroke-width="1"/><text x="27" y="28.5" text-anchor="middle" dominant-baseline="central" font-family="HYWenHei,'Hiragino Sans GB',sans-serif" font-size="24" font-weight="800" fill="#dbc599">K</text></svg>KURO</a>
 <nav class="navlinks"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="features.html">Features</a></nav>
-<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.2.2f">Download</a></span>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.2.2g">Download</a></span>
 </div></div>
 
 <div class="wrap narrow doc">
 
-<h2>v2.2.2f, current</h2>
-<p class="dim">Android arm64, game 7.0.0. <code>23cb8c05…5bf22338</code></p>
+<h2>v2.2.2g, current</h2>
+<p class="dim">Android arm64, game 7.0.0. <code>bfdcb800…2f5ce2bb</code></p>
 <div class="card">
+<p><b>Dialogue crash fixed.</b> The speed hold could write to an animation handle after the character it belonged to was gone — two reports, same stack, speed switch off. The handle is checked before it is ever touched now.</p>
 <p><b>Manual map teleports covered.</b> The reach feed emptied before KURO's own sends only. A waypoint tapped by hand rebuilds the world the same way — entries could survive the rebuild and crash later. It drains before those too now.</p>
 <p><b>Stray tap removed.</b> A leftover debug tap touched the screen once, 16 seconds after login. It is out of the build.</p>
 <p><b>Auto-farm crash fixed.</b> A waypoint transmit rebuilds the world around you; the 40 m reach feed could leave entries pointing at things the rebuild destroyed, and the game itself walked them. Entries are now unregistered before the transmit, while everything is still alive.</p>
@@ -31,7 +32,7 @@
 <p><b>Quest-marker crash fixed.</b> The marker position is read while the object is alive and never touched again — the map pools marks and kills them between map opens. The previous build called into them after death.</p>
 <p><b>Mid-air grab crash fixed.</b> Collecting at 40 m reach while flying could die the same way with no scene change at all — streaming recycles entities between sighting and touch. Every entity is rechecked before the touch now.</p>
 </div>
-<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.2.2f">GitHub releases</a>, not re-uploads.</p>
+<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.2.2g">GitHub releases</a>, not re-uploads.</p>
 
 <h2>v2.2</h2>
 <p class="dim">Android arm64, game 7.0.0. <code>7c09863b…a9888b</code>. Superseded by v2.2.2.</p>
