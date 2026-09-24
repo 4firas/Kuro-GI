@@ -1,6 +1,6 @@
 # Kuro
 
-Companion overlay for Android arm64. ESP, a teleport network, an auto-farmer, protection switches. Every switch says what it costs.
+Companion overlay for Android arm64. ESP, a teleport network, an auto-farmer, protection switches. Switch tags tell u if its safe or not.
 
 - **Wiki + guides:** https://4firas.github.io/Kuro-GI/
 - **Download:** [Releases](https://github.com/4firas/Kuro-GI/releases) (verify the SHA-256 before installing)
