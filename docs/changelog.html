@@ -11,13 +11,27 @@
 <div class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="#141a18" stroke="#dbc599" stroke-width="2.5"/><circle cx="27" cy="27" r="18.5" fill="none" stroke="#557283" stroke-width="1"/><text x="27" y="28.5" text-anchor="middle" dominant-baseline="central" font-family="HYWenHei,'Hiragino Sans GB',sans-serif" font-size="24" font-weight="800" fill="#dbc599">K</text></svg>KURO</a>
 <nav class="navlinks"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="features.html">Features</a></nav>
-<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.2.2i">Download</a></span>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3">Download</a></span>
 </div></div>
 
 <div class="wrap narrow doc">
 
-<h2>v2.2.2i, current</h2>
-<p class="dim">Android arm64, game 7.0.0. <code>d62ea107…f8f75d27</code></p>
+<h2>v2.3, current</h2>
+<p class="dim">Android arm64, game 7.1.0. <code>ec1f1d01…056c6c50</code></p>
+<div class="card">
+<p><b>The 7.1 update.</b> Every address re-derived and verified against the live game: god mode, multi damage, ESP, the teleport network, speed, noclip, fake weather. Nothing from 7.0 carries over blind.</p>
+<p><b>God mode works again.</b> 7.1 asks the question from the other side; the 7.0 check had gone quiet because of it. Blocked hits read Immune again.</p>
+<p><b>Multi damage works again.</b> The player is named differently in 7.1's combat events, and quest spawns sit outside the game's own tables. Both are covered.</p>
+<p><b>Speed and noclip work again.</b> 7.1 keeps the character's body on a separate entity from the avatar. The build finds it now, so both move the body you are actually wearing.</p>
+<p><b>Fake weather works again.</b> It read the 7.0 sky address, so the call went nowhere. The sky is found by name now.</p>
+<p><b>Farm page rebuilt.</b> Regions carry their own marks, the item list has real pictures with the count left per row, and one line says where you are.</p>
+<p><b>Scrolling no longer picks.</b> A swipe that starts on a button scrolls instead of choosing it. Drag, and you scroll.</p>
+<p><b>Extended reach is parked.</b> One gate it hangs on needs a rework on 7.1. The switch is out of the menu until that lands, and everything it drove is off with it.</p>
+</div>
+<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3">GitHub releases</a>, not re-uploads.</p>
+
+<h2>v2.2.2i</h2>
+<p class="dim">Android arm64, game 7.0.0. <code>d62ea107…f8f75d27</code>. Superseded by v2.3.</p>
 <div class="card">
 <p><b>Crash records rebuilt.</b> Every register, the thread that died, the faulting instruction, a stack scan when the frame chain is dead, and a vitals line every ten seconds — scene, fps, entities, position, memory. Older records are kept instead of overwritten, and the last crash is posted to logcat at launch.</p>
 <p><b>Dialogue crash fixed.</b> The speed hold could write to an animation handle after the character it belonged to was gone — two reports, same stack, speed switch off. The handle is checked before it is ever touched now.</p>
