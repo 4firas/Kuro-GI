@@ -17,17 +17,18 @@
 <div class="wrap narrow doc">
 
 <h2>v2.3.4b, hotfix</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>e66206a1…f00e490df</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>157b05d8…ffce3f19</code></p>
 <ul>
-<li>Crash records now name the library an address belongs to. No feature changes.</li>
+<li>Crash records now name the library an address belongs to.</li>
+<li>The payload now loads as a normal APK native lib (no extracted file in the app data dir), the loader package is renamed out of the svc/touch namespace, and the window class names no longer appear in the overlay dump.</li>
 </ul>
 <h2>v2.3.4</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>e66206a1…f00e490df6</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>157b05d8…ffce3f196</code></p>
 <ul>
 <li>Crash records now name the library an address belongs to.</li>
 </ul>
 <h2>v2.3.4</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>e66206a1…f00e490df6</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>157b05d8…ffce3f196</code></p>
 <ul>
 <li><b>Player Speed applies immediately</b> -- the ratio now goes onto every character rig through the game's own setter, no waypoint teleport needed.</li>
 <li><b>NoClip, reach distances and ESP marks work on shipped builds</b> -- the position-offset probe they all hang off was bailing out because its report file is dev-only.</li>
@@ -36,14 +37,14 @@
 </ul>
 <p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4b">GitHub releases</a>, not re-uploads.</p>
 <h2>v2.3.3</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>e66206a1…f00e490df6</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>157b05d8…ffce3f196</code></p>
 <ul>
 <li><b>Boot never touches your settings</b> -- the saved config is the state. The Default preset resets only when tapped.</li>
 <li><b>Extended reach goes native:</b> the game's own prompt radius is lifted to your reach setting, so its own buttons appear at distance and restore when you turn the feature off.</li>
 </ul>
 <p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4b">GitHub releases</a>, not re-uploads.</p>
 <h2>v2.3.2</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>e66206a1…f00e490df6</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>157b05d8…ffce3f196</code></p>
 <ul>
 <li><b>Settings survive restarts.</b> The profile was reset to factory values on every launch before your saved file was read -- that is why Multi Damage, NoClip and Player Speed kept turning themselves off. Fixed.</li>
 <li><b>Player Speed works.</b> The old path only scaled animation playback; it now drives the game's own movement-ratio call.</li>
@@ -52,7 +53,7 @@
 </ul>
 <p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4b">GitHub releases</a>, not re-uploads.</p>
 <h2>v2.3.1</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>e66206a1…f00e490df6</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>157b05d8…ffce3f196</code></p>
 <div class="card">
 <p><b>Auto talk works on 7.1.</b> The game moved the dialogue view inside its own context object, and the old check was quietly refusing the new one. Every line, choice and skip verified in-game after the fix.</p>
 <p><b>Fake weather works on 7.1.</b> The weather system was handed paths five characters long -- the wrong string conversion, silently failing every lookup. It now sends the game's own paths, checked against what the game itself asks for.</p>
@@ -75,7 +76,7 @@
 <p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3">GitHub releases</a>, not re-uploads.</p>
 
 <h2>v2.2.2i</h2>
-<p class="dim">Android arm64, game 7.0.0. <code>e66206a1…f00e490df627</code>. Superseded by v2.3.</p>
+<p class="dim">Android arm64, game 7.0.0. <code>157b05d8…ffce3f19627</code>. Superseded by v2.3.</p>
 <div class="card">
 <p><b>Crash records rebuilt.</b> Every register, the thread that died, the faulting instruction, a stack scan when the frame chain is dead, and a vitals line every ten seconds — scene, fps, entities, position, memory. Older records are kept instead of overwritten, and the last crash is posted to logcat at launch.</p>
 <p><b>Dialogue crash fixed.</b> The speed hold could write to an animation handle after the character it belonged to was gone — two reports, same stack, speed switch off. The handle is checked before it is ever touched now.</p>
@@ -94,7 +95,7 @@
 <p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.2.2i">GitHub releases</a>, not re-uploads.</p>
 
 <h2>v2.2</h2>
-<p class="dim">Android arm64, game 7.0.0. <code>e66206a1…f00e490df6</code>. Superseded by v2.2.2.</p>
+<p class="dim">Android arm64, game 7.0.0. <code>157b05d8…ffce3f196</code>. Superseded by v2.2.2.</p>
 <div class="card">
 <p><b>Domain-exit crash fixed.</b> The game died leaving domains. It doesn't anymore.</p>
 <p><b>Snezhnaya teleport set.</b> 178 chests, 138 Cryoculi, 83 waypoints/shrines/trials, all measured. 22,058 points total.</p>
@@ -106,7 +107,7 @@
 <p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.2">GitHub releases</a>, not re-uploads.</p>
 
 <h2>v2.1</h2>
-<p class="dim">Android arm64, game 7.0.0. <code>e66206a1…f00e490df6dd</code>. Superseded by v2.2.</p>
+<p class="dim">Android arm64, game 7.0.0. <code>157b05d8…ffce3f196dd</code>. Superseded by v2.2.</p>
 <div class="card">
 <p><b>Safety update.</b> Quieted two client-side telemetry reports the game was packaging into its security traffic — movement-speed and overlay-window. No new switches to flip; the client simply volunteers less now. (How stays private.)</p>
 <p><b>Safe-by-default profile.</b> Fresh installs boot into a locked Profile 1: dangerous server-visible features off, God Mode and No Fall Damage on, Auto Talk / Loot / Open / Waypoint on, ESP on (chests + all oculi, 500 m), stealth teleport defaults. Slots 2–3 are free; loading one is your risk to take.</p>
@@ -136,7 +137,7 @@
 <p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.1">GitHub releases</a>, not re-uploads. Older copies floating around (including the early 2.0) are outdated.</p>
 
 <h2>v2.0</h2>
-<p class="dim">Android arm64, game 7.0.0. <code>e66206a1…f00e490df670</code>. Superseded by v2.1.</p>
+<p class="dim">Android arm64, game 7.0.0. <code>157b05d8…ffce3f19670</code>. Superseded by v2.1.</p>
 <div class="card">
 <p><b>Teleport Points.</b> Waypoints and statues of every region in one list, exact positions from the game's own scene data. Locked ones get visited on purpose.</p>
 <p><b>Auto farm.</b> Whole selections nearest first, 500 ms to 5 s wait slider, nudge and retry, skip and remember, forced switches with restore.</p>
