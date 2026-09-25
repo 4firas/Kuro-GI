@@ -11,36 +11,45 @@
 <div class="topbar"><div class="wrap">
 <a class="brand" href="index.html"><svg viewBox="0 0 54 54"><circle cx="27" cy="27" r="24" fill="#141a18" stroke="#dbc599" stroke-width="2.5"/><circle cx="27" cy="27" r="18.5" fill="none" stroke="#557283" stroke-width="1"/><text x="27" y="28.5" text-anchor="middle" dominant-baseline="central" font-family="HYWenHei,'Hiragino Sans GB',sans-serif" font-size="24" font-weight="800" fill="#dbc599">K</text></svg>KURO</a>
 <nav class="navlinks"><a href="index.html">Home</a><a href="guide.html">Guide</a><a href="features.html">Features</a></nav>
-<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.3">Download</a></span>
+<span class="topright"><a class="gh" href="https://github.com/4firas/Kuro-GI">GitHub</a><a class="btn small primary" href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4">Download</a></span>
 </div></div>
 
 <div class="wrap narrow doc">
 
-<h2>v2.3.3, current</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>d163a811…1a22629f</code></p>
+<h2>v2.3.4, current</h2>
+<p class="dim">Android arm64, game 7.1.0. <code>446f8059…f88c93</code></p>
+<ul>
+<li><b>Player Speed applies immediately</b> -- the ratio now goes onto every character rig through the game's own setter, no waypoint teleport needed.</li>
+<li><b>NoClip, reach distances and ESP marks work on shipped builds</b> -- the position-offset probe they all hang off was bailing out because its report file is dev-only.</li>
+<li><b>Crash records are readable</b> (they were mode 660, unpullable without root).</li>
+<li>The speed switch can no longer flip itself off from a touch glitch.</li>
+</ul>
+<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4">GitHub releases</a>, not re-uploads.</p>
+<h2>v2.3.3</h2>
+<p class="dim">Android arm64, game 7.1.0. <code>446f8059…f88c93</code></p>
 <ul>
 <li><b>Boot never touches your settings</b> -- the saved config is the state. The Default preset resets only when tapped.</li>
 <li><b>Extended reach goes native:</b> the game's own prompt radius is lifted to your reach setting, so its own buttons appear at distance and restore when you turn the feature off.</li>
 </ul>
-<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.3">GitHub releases</a>, not re-uploads.</p>
+<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4">GitHub releases</a>, not re-uploads.</p>
 <h2>v2.3.2</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>d163a811…1a22629f</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>446f8059…f88c93</code></p>
 <ul>
 <li><b>Settings survive restarts.</b> The profile was reset to factory values on every launch before your saved file was read -- that is why Multi Damage, NoClip and Player Speed kept turning themselves off. Fixed.</li>
 <li><b>Player Speed works.</b> The old path only scaled animation playback; it now drives the game's own movement-ratio call.</li>
 <li><b>NoClip holds every party rig</b>, not one guessed body -- no more "nothing happens" when toggled standing still.</li>
 <li>Config writes are atomic; a kill mid-write cannot truncate the file.</li>
 </ul>
-<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.3">GitHub releases</a>, not re-uploads.</p>
+<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4">GitHub releases</a>, not re-uploads.</p>
 <h2>v2.3.1</h2>
-<p class="dim">Android arm64, game 7.1.0. <code>d163a811…1a22629f</code></p>
+<p class="dim">Android arm64, game 7.1.0. <code>446f8059…f88c93</code></p>
 <div class="card">
 <p><b>Auto talk works on 7.1.</b> The game moved the dialogue view inside its own context object, and the old check was quietly refusing the new one. Every line, choice and skip verified in-game after the fix.</p>
 <p><b>Fake weather works on 7.1.</b> The weather system was handed paths five characters long -- the wrong string conversion, silently failing every lookup. It now sends the game's own paths, checked against what the game itself asks for.</p>
 <p><b>Noclip controls stay held.</b> A scroll-fix from the last build was dropping the fly stick mid-gesture. Drag controls are exempt now; scrolling still cannot press buttons.</p>
 <p><b>Extended reach is back.</b> A switch and a range slider on the World tab (3-40 m). While Auto Loot is on, pick-ups, ore and plants inside the range are collected for you through the game's own action -- items taken from 38-39 m on device. With Auto Loot off it does nothing.</p>
 </div>
-<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.3">GitHub releases</a>, not re-uploads.</p>
+<p class="dim">Get it from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.3.4">GitHub releases</a>, not re-uploads.</p>
 
 <h2>v2.3</h2>
 <div class="card">
