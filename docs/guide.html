@@ -21,7 +21,7 @@
 <li>Download <code>KURO-v2.4.0.apk</code> from <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.4.0">Releases</a>. Full client, Android arm64, game version 7.1.0. Not a patch, not a plugin.</li>
 <li>Check the hash before installing:
 <pre>sha256sum KURO-v2.4.0.apk
-# starts with d751042e, matches the .sha256 in the release</pre></li>
+# starts with 6c162d08, matches the .sha256 in the release</pre></li>
 <li><b>Coming from the official client, or from another mod:</b> your phone will refuse to install over it (different signing key). Uninstalling the old app deletes its data folder, which holds the game's downloaded resources — so the game downloads them once again (up to ~50 GB). That happens <b>once per switch</b>. KURO → newer KURO updates install straight over and keep everything.
 <pre># Optional, if you want to skip that download (USB debugging on):
 adb pull /sdcard/Android/data/com.miHoYo.GenshitImpact ./gi-data
