@@ -28,10 +28,11 @@ adb pull /sdcard/Android/data/com.miHoYo.GenshitImpact ./gi-data
 # ... uninstall, install KURO, then BEFORE first launch:
 adb push ./gi-data /sdcard/Android/data/com.miHoYo.GenshitImpact</pre></li>
 <li>Install it (allow unknown sources when asked). Same login, account untouched.</li>
+<li><b>Play Protect may warn.</b> It flags every re-signed copy of a Play game — Kuro is not from Play and never can be. Confirm the SHA-256 above, then choose <i>More details → Install anyway</i>. To silence it entirely, turn off app scanning: Play Store → Play Protect → gear icon → turn off "Scan apps with Play Protect".</li>
 <li>Launch and wait for the world to load. The badge shows up once the hooks are in. <b>Don't press anything before that.</b> Early presses land before the hooks do and misbehave.</li>
 <li>Tap the badge for the menu. The quick buttons beside it jump straight to things.</li>
 </ol>
-<div class="note">Updating means installing the new APK over the old one. Profiles and collected memory carry over.</div>
+<div class="note">Updating means installing the new APK over the old one. Every Kuro release carries the same signing key, so Android treats it as the same app — no uninstall, ever, between Kuro versions. Profiles and collected memory carry over.</div>
 
 <h2>First run</h2>
 <p>Read <a href="safety.html">Safety</a> once, fully, before touching anything red. Then: No Fall Damage on before any approximate pin. One <i>Go to nearest chest</i> before any farm, so a landing feels familiar. Open the in-game map once per region you care about, since Kuro reads the map's own flags while it's open and everything gets smarter with it.</p>
