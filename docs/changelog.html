@@ -16,6 +16,17 @@
 
 <div class="wrap narrow doc">
 
+<h2>v2.7.1</h2>
+<p class="dim">Android arm64, game 7.2.0. <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.7.1">Download and SHA-256</a></p>
+<ul>
+<li><b>Teleports &amp; Map TP.</b> Direct mode (Movement planner off) and pacing-off move properly instead of refusing. Landing recovery refreshes after position writes so chest/oculus jumps stop falling or snapping back. Map TP copies your selected marker and checks the active scene (fixing Temple of Space / wrong-scene jumps) until you press <i>Go to selected marker</i>. Waypoint teleports land beside the pillar and wait for positive map confirmation.</li>
+<li><b>Quest &amp; Dialogue.</b> Fixed Quest marker tracking losing its target on non-quest map marks, and restored Instant Text per-character cadence alongside line delay.</li>
+<li><b>Combat &amp; World.</b> Fixed Auto Attack failing to match the active 7.2 attack button. Dumb Enemies now filters by owner so friendly summons keep attacking. Fixed 7.2 Fake Weather lookup and puzzle / unknown collectible ESP filtering.</li>
+<li><b>Loot &amp; Extended reach.</b> Localised prompt ownership no longer depends on ESP projection/capping; panel scanning covers 64 entries and re-reads after presses.</li>
+<li><b>Overlay &amp; Packaging.</b> Fixed badge/menu recovery across Android Home/resume, reduced idle redraw cost, and tightened release origin verification (by Fir4el, free, never sold).</li>
+</ul>
+<p>Install over your current Kuro. Settings and downloaded resources carry over. Do not uninstall first.</p>
+
 <h2>v2.7.0</h2>
 <p class="dim">Android arm64, game 7.2.0. <a href="https://github.com/4firas/Kuro-GI/releases/tag/v2.7.0">Download and SHA-256</a></p>
 <ul>
